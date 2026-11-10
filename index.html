@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tacos de Ciudad · Taquería de barrio en la Condesa</title>
+<meta name="description" content="Tacos de Ciudad: taquería en Av. Vicente Suárez 110, Condesa. Pastor, suadero, campechano y salsas de la casa.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Tacos de Ciudad – propuesta de sitio web">
+<meta property="og:description" content="Tacos de Ciudad: taquería en Av. Vicente Suárez 110, Condesa. Pastor, suadero, campechano y salsas de la casa.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=2000&q=75">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff5fa;--ink:#151515;--accent:#e5007e;--accent2:#ffffff;--soft:#ffe0ef;--on-accent:#fff;--r:0px;--fh:'Bricolage Grotesque',serif;--fb:'Bricolage Grotesque',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:auto}body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}
+h1,h2,h3{font-family:var(--fh);line-height:1.05;font-weight:800;letter-spacing:-0.04em}
+.strip{position:relative;z-index:60;background:var(--ink);color:var(--bg);font-size:.78rem;text-align:center;padding:.45rem 1rem;letter-spacing:.02em}
+.strip b{color:var(--accent2)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5vw;transition:background .4s,padding .4s,box-shadow .4s,transform .45s;color:#fff}
+.nav.scrolled{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:.7rem 5vw;color:var(--ink);box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+.nav.hide{transform:translateY(-110%)}
+.logo{font-family:var(--fh);font-size:1.35rem;text-decoration:none;font-weight:700}
+.nav ul{display:flex;gap:1.6rem;list-style:none}.nav ul a{text-decoration:none;font-size:.92rem;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav .btn{padding:.55rem 1.1rem;font-size:.85rem}
+.burger{display:none;background:none;border:0;color:inherit;font-size:1.6rem;cursor:pointer}
+.btn{position:relative;display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;overflow:hidden;isolation:isolate;transition:color .35s,transform .2s;font-size:.95rem;white-space:nowrap}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;transform:translateY(101%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.btn:hover::before{transform:translateY(0)}
+.btn-solid{background:var(--accent);color:var(--on-accent)}.btn-solid::before{background:var(--ink)}.btn-solid:hover{color:var(--bg)}
+.btn-line{border:1.5px solid currentColor}.btn-line::before{background:var(--accent)}.btn-line:hover{color:var(--on-accent);border-color:var(--accent)}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;color:#fff}
+.hero-media{position:absolute;inset:0;overflow:hidden}.hero-media img{width:100%;height:120%;object-fit:cover;transform-origin:center;will-change:transform}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(229,0,126,.55))}
+.hero-inner{position:relative;z-index:2;padding:9rem 5vw 5rem;max-width:1100px;}
+.kicker{display:inline-block;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem .9rem;border:1px solid rgba(255,255,255,.5);border-radius:999px;margin-bottom:1.4rem}
+.hero h1{font-size:clamp(2.8rem,8.5vw,7.5rem);margin-bottom:1.2rem}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:640px;opacity:.92;margin-bottom:2rem}
+.hero .ctas{display:flex;gap:.8rem;flex-wrap:wrap;}
+.hero .btn-line{color:#fff}
+.scroll-cue{position:absolute;right:5vw;bottom:2rem;z-index:2;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl;opacity:.8}
+.split-hero .hero-media{left:auto;width:52%}.split-hero{background:var(--soft);color:var(--ink)}.split-hero .hero-media::after{background:none}.split-hero .hero-inner{max-width:48%}.split-hero .kicker{border-color:currentColor}.split-hero h1{font-size:clamp(2.6rem,5.6vw,5.4rem)}.split-hero .btn-line{color:var(--ink)}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}.w>span{display:inline-block;will-change:transform}
+.marquee{background:var(--accent);color:var(--on-accent);overflow:hidden;white-space:nowrap;padding:1rem 0;font-family:var(--fh);font-size:clamp(1.4rem,3vw,2.4rem)}
+.marquee .track{display:inline-block;will-change:transform}
+section{position:relative}.pad{padding:clamp(4.5rem,10vw,8rem) 5vw}
+.eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:1rem;display:block}
+h2{font-size:clamp(2.1rem,5vw,4rem);margin-bottom:1.2rem}
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:5vw;align-items:center}
+.about-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}.about-img img{width:100%;height:115%;object-fit:cover}
+.reveal-text{font-size:clamp(1.3rem,2.4vw,2rem);line-height:1.35;font-family:var(--fh)}
+.reveal-text .rw{opacity:1}
+.about p.body{margin-top:1.4rem;opacity:.85;max-width:560px}
+.stats{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:2rem}.stat strong{display:block;font-family:var(--fh);font-size:2rem;color:var(--accent)}.stat span{font-size:.85rem;opacity:.75}
+.menu-sec{background:var(--soft)}
+.menu-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
+.card{background:var(--bg);border-radius:var(--r);padding:1.6rem;border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -24px rgba(0,0,0,.4)}
+.card-top{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}.card h3{font-size:1.3rem}.price{font-weight:700;color:var(--accent);white-space:nowrap}
+.card p{margin-top:.5rem;font-size:.93rem;opacity:.78}
+.note{font-size:.82rem;opacity:.7;margin-top:1.6rem}
+.list .cards{grid-template-columns:1fr 1fr;gap:0 3rem}.list .card{background:none;border:0;border-bottom:1px dashed color-mix(in srgb,var(--ink) 30%,transparent);border-radius:0;padding:1.2rem 0}.list .card:hover{transform:none;box-shadow:none}
+.gallery{overflow:hidden;background:var(--ink);color:var(--bg)}
+.g-head{padding:clamp(4rem,8vw,6rem) 5vw 2rem}
+.g-track{display:flex;gap:1.5vw;padding:0 5vw 5rem;width:max-content}
+.g-item{position:relative;width:min(42vw,560px);aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;flex:none}
+.g-item:nth-child(even){width:min(30vw,420px);aspect-ratio:3/4}
+.g-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
+.g-item figcaption{position:absolute;left:1rem;bottom:1rem;background:rgba(0,0,0,.55);color:#fff;font-size:.75rem;padding:.3rem .7rem;border-radius:999px}
+.visit{display:grid;grid-template-columns:1fr 1.2fr;gap:4vw;align-items:stretch}
+.hours{list-style:none;margin:1.5rem 0}.hours li{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}
+.addr{font-size:1.05rem;margin-bottom:1rem}
+.map{border-radius:var(--r);overflow:hidden;min-height:380px;border:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}.map iframe{width:100%;height:100%;min-height:380px;border:0;filter:none}
+.contact{background:var(--accent);color:var(--on-accent);text-align:center}.contact h2{font-size:clamp(2.4rem,7vw,5.5rem)}
+.contact .btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+.contact .btn-solid{background:var(--ink);color:var(--bg)}.contact .btn-solid::before{background:var(--bg)}.contact .btn-solid:hover{color:var(--ink)}
+.contact .btn-line::before{background:var(--ink)}.contact .btn-line:hover{color:var(--bg);border-color:var(--ink)}
+.extra{}
+footer{background:var(--ink);color:var(--bg);padding:3rem 5vw;font-size:.85rem;display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}footer p{opacity:.75;max-width:620px}footer a{color:var(--accent2)}
+@media (max-width:860px){
+ .nav{color:#fff}.nav.scrolled,.nav.open{color:var(--ink);background:var(--bg)}
+ .nav ul,.nav .nav-cta{display:none}.burger{display:block}
+ .nav.open ul{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg);color:var(--ink);padding:1.5rem 5vw;gap:1rem}
+ .about,.visit{grid-template-columns:1fr}.about-img{aspect-ratio:4/3}
+ .split-hero .hero-media{width:100%}.split-hero .hero-media::after{background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.7))}.split-hero{color:#fff}.split-hero .hero-inner{max-width:100%}.split-hero .btn-line{color:#fff}
+ .g-track{overflow-x:auto;scroll-snap-type:x mandatory;width:auto;padding-bottom:3rem}.g-item,.g-item:nth-child(even){width:78vw;aspect-ratio:4/5;scroll-snap-align:center}
+ .list .cards{grid-template-columns:1fr}.scroll-cue{display:none}
+ .hero h1{font-size:clamp(2.6rem,12vw,4.2rem)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+</style>
+</head>
+<body>
+<div class="strip">Propuesta de sitio web para <b>Tacos de Ciudad</b> · diseño de Jose Khalili · fotos ilustrativas de Unsplash · datos marcados “por confirmar”</div>
+<header class="nav" id="nav">
+ <a class="logo" href="#top">Tacos de Ciudad</a>
+ <ul><li><a href="#menu">Menú</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#galeria">Galería</a></li><li><a href="#visitanos">Horarios</a></li><li><a href="#contacto">Contacto</a></li></ul>
+ <a class="btn btn-solid nav-cta magnetic" href="#contacto"><span>Contacto</span></a>
+ <button class="burger" aria-label="Abrir menú" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+</header>
+<main id="top">
+<section class="hero ">
+ <div class="hero-media"><img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=2000&q=75" alt="Foto ilustrativa: tacos"></div>
+ <div class="hero-inner">
+  <span class="kicker">Condesa · todos los días</span>
+  <h1 class="split">Tacos de Ciudad, hasta tarde</h1>
+  <p class="lead">Pastor, suadero, campechano y tripa con cuatro salsas de la casa, en Vicente Suárez 110. Viernes y sábado hasta las 2:00.</p>
+  <div class="ctas"><a class="btn btn-solid magnetic" href="#menu"><span>Ver menú</span></a><a class="btn btn-line magnetic" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Vicente%20Su%C3%A1rez%20110%2C%20Condesa%2C%20CDMX" target="_blank" rel="noopener"><span>Cómo llegar</span></a></div>
+ </div>
+ <div class="scroll-cue">Desliza ↓</div>
+</section>
+<div class="marquee" aria-hidden="true"><div class="track">Pastor · Suadero · Campechano · Tripa · 4 salsas · Aguas frescas · Pastor · Suadero · Campechano · Tripa · 4 salsas · Aguas frescas · Pastor · Suadero · Campechano · Tripa · 4 salsas · Aguas frescas · Pastor · Suadero · Campechano · Tripa · 4 salsas · Aguas frescas · </div></div>
+<section class="pad" id="nosotros">
+ <div class="about">
+  <div>
+   <span class="eyebrow">Nosotros</span>
+   <h2 class="split-lines">La taquería donde come el barrio</h2>
+   <p class="reveal-text">Mesa llena, salsas en la mesa y la fila que avanza rápido.</p>
+   <p class="body">Tacos de Ciudad abre todos los días desde el mediodía, con servicio para llevar y a domicilio por apps. Carta completa y precios por confirmar.</p>
+   <div class="stats"><div class="stat"><strong>7 días</strong><span>abierto</span></div><div class="stat"><strong>2:00</strong><span>vie y sáb</span></div><div class="stat"><strong>4</strong><span>salsas</span></div></div>
+  </div>
+  <div class="about-img"><img src="https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?auto=format&fit=crop&w=1400&q=75" alt="Foto ilustrativa: taco" loading="lazy"></div>
+ </div>
+</section>
+<section class="pad menu-sec list" id="menu">
+ <div class="menu-head"><div><span class="eyebrow">La carta</span><h2 class="split-lines">Los de siempre</h2></div><p style="max-width:420px;opacity:.8">Platillos mencionados en guías públicas. Precios por confirmar.</p></div>
+ <div class="cards"><article class="card"><div class="card-top"><h3>Al pastor</h3></div></article><article class="card"><div class="card-top"><h3>Suadero</h3></div></article><article class="card"><div class="card-top"><h3>Campechano</h3></div></article><article class="card"><div class="card-top"><h3>Tripa</h3></div></article><article class="card"><div class="card-top"><h3>Aguas frescas</h3></div><p>Jamaica y más</p></article><article class="card"><div class="card-top"><h3>Postre</h3></div><p>Por confirmar</p></article></div>
+ <p class="note">Carta y precios por confirmar con Tacos de Ciudad.</p>
+</section>
+
+<section class="gallery" id="galeria">
+ <div class="g-head"><span class="eyebrow">Galería</span><h2 class="split-lines">Así se vive</h2><p style="opacity:.7">Fotos ilustrativas de Unsplash. En la versión final van las fotos reales del negocio.</p></div>
+ <div class="g-wrap"><div class="g-track"><figure class="g-item"><img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=1200&q=75" alt="Foto ilustrativa (Tacos)" loading="lazy"><figcaption>Tacos</figcaption></figure><figure class="g-item"><img src="https://images.unsplash.com/photo-1624300629298-e9de39c13be5?auto=format&fit=crop&w=1200&q=75" alt="Foto ilustrativa (Salsas)" loading="lazy"><figcaption>Salsas</figcaption></figure><figure class="g-item"><img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1200&q=75" alt="Foto ilustrativa (La orden)" loading="lazy"><figcaption>La orden</figcaption></figure><figure class="g-item"><img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=1200&q=75" alt="Foto ilustrativa (Para acompañar)" loading="lazy"><figcaption>Para acompañar</figcaption></figure><figure class="g-item"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1200&q=75" alt="Foto ilustrativa (Más tacos)" loading="lazy"><figcaption>Más tacos</figcaption></figure></div></div>
+</section>
+<section class="pad" id="visitanos">
+ <div class="visit">
+  <div>
+   <span class="eyebrow">Horarios y ubicación</span>
+   <h2 class="split-lines">Te esperamos</h2>
+   <p class="addr">📍 Av. Vicente Suárez 110, Condesa, 06140 Cuauhtémoc, CDMX</p>
+   <ul class="hours"><li><span>Lunes</span><span>12:00 – 24:00</span></li><li><span>Martes</span><span>12:00 – 24:00</span></li><li><span>Miércoles</span><span>12:00 – 24:00</span></li><li><span>Jueves</span><span>12:00 – 24:00</span></li><li><span>Viernes</span><span>12:00 – 2:00</span></li><li><span>Sábado</span><span>12:00 – 2:00</span></li><li><span>Domingo</span><span>12:00 – 24:00</span></li></ul>
+   <p class="note">Horario tomado de fichas públicas; por confirmar con el negocio.</p>
+   <p style="margin-top:1.4rem"><a class="btn btn-solid magnetic" href="https://www.google.com/maps/search/?api=1&query=Av.%20Vicente%20Su%C3%A1rez%20110%2C%20Condesa%2C%20CDMX" target="_blank" rel="noopener"><span>Abrir en Google Maps</span></a></p>
+  </div>
+  <div class="map"><iframe title="Mapa de Tacos de Ciudad" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.%20Vicente%20Su%C3%A1rez%20110%2C%20Condesa%2C%20CDMX&z=16&output=embed"></iframe></div>
+ </div>
+</section>
+<section class="pad contact" id="contacto">
+ <span class="eyebrow" style="color:inherit;opacity:.8">Contacto</span>
+ <h2 class="split-lines">¿Unos tacos?</h2>
+ <p style="max-width:560px;margin:0 auto;opacity:.9">Llama para pedir para llevar o síguenos en Instagram.</p>
+ <div class="btns"><a class="btn btn-solid magnetic" href="tel:+525525937472"><span>Llamar 55 2593 7472</span></a><a class="btn btn-line magnetic" href="https://wa.me/525525937472?text=Hola%20Tacos%20de%20Ciudad%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener"><span>WhatsApp (por confirmar)</span></a><a class="btn btn-line magnetic" href="https://www.instagram.com/tacosdeciudad/" target="_blank" rel="noopener"><span>Instagram @tacosdeciudad</span></a></div>
+</section>
+</main>
+<footer>
+ <div><strong style="font-family:var(--fh);font-size:1.3rem">Tacos de Ciudad</strong><p>Av. Vicente Suárez 110, Condesa, 06140 Cuauhtémoc, CDMX</p></div>
+ <p>Propuesta de sitio web hecha por <strong>Jose Khalili – Diseño web</strong>. Página demostrativa: las fotos son ilustrativas (Unsplash) y los datos marcados “por confirmar” deben validarse con Tacos de Ciudad. No es el sitio oficial del negocio.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>
+(function(){
+ var nav=document.getElementById('nav');var strip=document.querySelector('.strip');
+ var lastY=0;
+ function onScroll(){var y=window.scrollY;nav.style.top=Math.max(0,strip.offsetHeight-y)+'px';nav.classList.toggle('scrolled',y>60);nav.classList.toggle('hide',y>lastY&&y>500&&!nav.classList.contains('open'));lastY=y;}
+ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+ document.querySelectorAll('.nav ul a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});
+ var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduce||!window.gsap||!window.ScrollTrigger)return;
+ gsap.registerPlugin(ScrollTrigger);
+ var lenis=null;
+ if(window.Lenis&&!('ontouchstart' in window)){lenis=new Lenis({lerp:.1});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();lenis.scrollTo(t,{offset:-60})}})});}
+ function splitWords(el){var words=el.textContent.trim().split(/\s+/);el.innerHTML=words.map(function(w){return '<span class="w"><span>'+w+'</span></span>'}).join(' ');return el.querySelectorAll('.w>span');}
+ // hero
+ var hw=splitWords(document.querySelector('.hero h1'));
+ var tl=gsap.timeline({defaults:{ease:'power4.out'}});
+ tl.from('.hero-media img',{scale:1.35,duration:2.2,ease:'power2.out'},0)
+   .from('.kicker',{y:20,opacity:0,duration:.8},.2)
+   .from(hw,{yPercent:115,rotate:4,duration:1.1,stagger:.07},.3)
+   .from('.hero .lead',{y:30,opacity:0,duration:.9},'-=.7')
+   .from('.hero .ctas .btn',{y:24,opacity:0,stagger:.1,duration:.7},'-=.6');
+ gsap.to('.hero-media img',{yPercent:18,scale:1.08,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ gsap.to('.hero-inner',{yPercent:-25,opacity:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ // marquee scrub
+ gsap.fromTo('.marquee .track',{xPercent:0},{xPercent:-35,ease:'none',scrollTrigger:{trigger:'.marquee',start:'top bottom',end:'bottom top',scrub:1}});
+ // headings reveal by words
+ document.querySelectorAll('.split-lines').forEach(function(h){var ws=splitWords(h);gsap.from(ws,{yPercent:110,duration:1,ease:'power4.out',stagger:.05,scrollTrigger:{trigger:h,start:'top 85%'}});});
+ // reveal text scrub word opacity
+ document.querySelectorAll('.reveal-text').forEach(function(p){var words=p.textContent.trim().split(/\s+/);p.innerHTML=words.map(function(w){return '<span class="rw">'+w+'</span>'}).join(' ');gsap.fromTo(p.querySelectorAll('.rw'),{opacity:.15},{opacity:1,stagger:.05,ease:'none',scrollTrigger:{trigger:p,start:'top 80%',end:'bottom 45%',scrub:true}});});
+ gsap.from('.about p.body, .stat',{y:30,opacity:0,stagger:.12,duration:.8,scrollTrigger:{trigger:'.about',start:'top 60%'}});
+ gsap.fromTo('.about-img img',{yPercent:-10},{yPercent:5,ease:'none',scrollTrigger:{trigger:'.about-img',start:'top bottom',end:'bottom top',scrub:true}});
+ gsap.from('.about-img',{clipPath:'inset(18% 18% 18% 18% round 24px)',duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'.about-img',start:'top 80%'}});
+ // cards stagger
+ gsap.from('.card',{y:60,opacity:0,duration:.8,ease:'power3.out',stagger:{each:.08,from:'start'},scrollTrigger:{trigger:'.cards',start:'top 80%'}});
+ // extra blocks
+ gsap.utils.toArray('.fx-up').forEach(function(el){gsap.from(el,{y:50,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%'}})});
+ // gallery horizontal pin (desktop)
+ var mm=gsap.matchMedia();
+ mm.add('(min-width: 861px)',function(){
+  var track=document.querySelector('.g-track');
+  var dist=function(){return track.scrollWidth-window.innerWidth};
+  gsap.to(track,{x:function(){return -dist()},ease:'none',scrollTrigger:{trigger:'.gallery',start:'top top',end:function(){return '+='+dist()},pin:true,scrub:1,invalidateOnRefresh:true}});
+  gsap.utils.toArray('.g-item img').forEach(function(img){gsap.to(img,{scale:1,ease:'none',scrollTrigger:{trigger:'.gallery',start:'top top',end:function(){return '+='+dist()},scrub:true}})});
+  // magnetic buttons
+  document.querySelectorAll('.magnetic').forEach(function(btn){btn.addEventListener('mousemove',function(e){var r=btn.getBoundingClientRect();gsap.to(btn,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.4})});btn.addEventListener('mouseleave',function(){gsap.to(btn,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'})})});
+ });
+ mm.add('(max-width: 860px)',function(){gsap.utils.toArray('.g-item').forEach(function(it){gsap.from(it,{opacity:0,y:40,duration:.8,scrollTrigger:{trigger:it,start:'top 90%'}})});gsap.utils.toArray('.g-item img').forEach(function(img){gsap.set(img,{scale:1})});});
+ // visit + map
+ gsap.from('.hours li',{x:-30,opacity:0,stagger:.06,duration:.6,scrollTrigger:{trigger:'.hours',start:'top 85%'}});
+ gsap.from('.map',{clipPath:'inset(0 0 100% 0)',duration:1.3,ease:'power3.inOut',scrollTrigger:{trigger:'.map',start:'top 80%'}});
+ gsap.from('.contact .btn',{y:30,opacity:0,stagger:.08,duration:.7,scrollTrigger:{trigger:'.contact',start:'top 70%'}});
+ window.addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
